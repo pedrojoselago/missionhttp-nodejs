@@ -35,4 +35,9 @@ app.use('/api/greeting', (request, response) => {
   response.send({content: `Hello, ${name || 'World!'}`});
 });
 
+app.use('/api/testapi', (request, response) => {
+  const name = request.query ? request.query.name : undefined;
+  response.send({content: `Pedro dice... ¿que es lo que dices?... Ah, dices... ${name || 'No dices nada!'}`});
+});
+
 module.exports = app;
